@@ -5,11 +5,18 @@ html, body {
     margin: 0;
     overflow: hidden;
 }
-body{
-    background: radial-gradient(circle at 50% 20%, #2a0845 0%, #11041f 50%, #05010a 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #ffffff;
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at 20% 80%, #ff1493 0%, transparent 30%),
+        radial-gradient(circle at 80% 20%, #00bfff 0%, transparent 30%),
+        linear-gradient(135deg, #16002b, #3b075c, #ff4f9a);
+
+    min-height: 100vh;
 }
 
 .Esquina{
@@ -19,12 +26,17 @@ body{
     transform-origin: left top;
 }
 
-h1 { font-family: 'Yellowtail', cursive;
-    font-size: 4rem;
+h1 { font-size: 55px;
+    font-family: cursive;
     font-style: italic;
-    text-transform: uppercase;
-    text-transform: none;
+
     color: white;
+
+    text-shadow:
+        3px 3px 0px #ff1493,
+        0px 0px 15px #ff1493;
+
+    margin-left: 40px;
 }
 
 p {
