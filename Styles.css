@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Yellowtail&family=Great+Vibes&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+body{
+    background: radial-gradient(circle at 50% 20%, #2a0845 0%, #11041f 50%, #05010a 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+.Esquina{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: left top;
+}
+
+h1 { font-family: 'Yellowtail', cursive;
+    font-size: 4rem;
+    font-style: italic;
+    text-transform: uppercase;
+    text-transform: none;
+    color: white;
+}
+
+p {
+    font-size: 0.95rem;
+    color: aquamarine;
+    letter-spacing: 3px;
+    text-transform: None;
+    margin: 0;
+}
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.menu{ display: flex;
+    list-style: none; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 20px 40px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: thistle;
+    font-family: 'Yellowtail', cursive;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color o.3x ease;
+    padding-bottom: 5px;
+
+}
+
+.menu a.active{
+    color: #ff7597;
+    border-bottom: 2px solid #ff7597
+}
+
+.Opciones{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+
+}
+
+.Ventana {
+    display: none; 
+    position: absolute; 
+    right: 0;
+    top: 30px;
+    width: 260px;
+    background-color: #1a0b2e;
+    border: 1px solid #ff2a85;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.Ventana.activo {
+    display: block !important;
+}
+
+
+.Ventana h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #442255;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#listaProductos {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #442255;
+    padding-top: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.btn-pagar {
+    width: 100%;
+    background-color: #ff2a85;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    box-sizing: border-box;  
+}
+
+.Opciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+}
+
+.Opciones li a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1a0b2e; 
+    color: #ffffff; 
+    text-decoration: none;
+    border: 1px solid #ff2a85; 
+    border-radius: 6px; 
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.Opciones li a:hover {
+    background-color: #ff2a85;
+    color: #1a0b2e;
+    box-shadow: 0px 0px 10px rgba(255, 42, 133, 0.6);
+}
+
