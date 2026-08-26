@@ -64,20 +64,25 @@ p {
 }
 
 .menu a{
+    color: white;
     text-decoration: none;
-    color: thistle;
-    font-family: 'Yellowtail', cursive;
-    font-size: 0.9rem;
+    margin: 0 15px;
+
+    font-weight: bold;
     text-transform: uppercase;
-    transition: color o.3x ease;
-    padding-bottom: 5px;
+
+    transition: 0.3s;
 
 }
 
-.menu a.active{
-    color: #ff7597;
-    border-bottom: 2px solid #ff7597
+.menu a:hover{
+    color: #ff4fa3;
+
+    text-shadow:
+        0 0 5px #ff4fa3,
+        0 0 15px #ff4fa3;
 }
+
 
 .Opciones{
     list-style: none;
@@ -163,20 +168,60 @@ p {
 }
 
 .Opciones li a {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #1a0b2e; 
-    color: #ffffff; 
-    text-decoration: none;
-    border: 1px solid #ff2a85; 
-    border-radius: 6px; 
+    background: rgba(20, 0, 40, 0.6);
+
+    color: white;
+
+    border: 2px solid #ff4fa3;
+    border-radius: 8px;
+
+    padding: 12px 25px;
+    margin: 8px;
+
     font-weight: bold;
-    transition: all 0.3s ease;
+
+    box-shadow:
+        0 0 5px #ff4fa3,
+        inset 0 0 8px rgba(255, 79, 163, 0.3);
+
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .Opciones li a:hover {
-    background-color: #ff2a85;
-    color: #1a0b2e;
-    box-shadow: 0px 0px 10px rgba(255, 42, 133, 0.6);
+    background: #ff4fa3;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 10px #ff4fa3,
+        0 0 25px #ff4fa3;
 }
 
+.producto-card {
+    width: 250px;
+
+    padding: 20px;
+
+    margin: 20px;
+
+    background: rgba(20, 0, 40, 0.7);
+
+    border: 1px solid #ff4fa3;
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(255, 79, 163, 0.4);
+
+    transition: 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 10px #ff4fa3,
+        0 0 30px rgba(255, 79, 163, 0.6);
+}
