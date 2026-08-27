@@ -281,24 +281,5 @@ p {
     left: auto;
     top: 45px;
 }
-/* Ajustes específicos para el carrito en teléfonos */
-@media (max-width: 768px) {
-    .contenedor-carrito-flotante {
-        /* Lo movemos a la esquina inferior derecha o ajustamos su posición arriba para que no tape el menú */
-        top: 15px;
-        right: 10px;
-    }
 
-    .btn-carrito-separado {
-        padding: 8px 12px; /* Un poco más compacto para celulares */
-        font-size: 0.85rem;
-    }
-
-    /* Opcional: Si prefieres que el menú de arriba no se sature, 
-       hacemos que la ventana del carrito aparezca bien centrada o ajustada a la pantalla */
-    .contenedor-carrito-flotante .Ventana {
-        width: 240px;
-        right: -10px;
-    }
-}
 
