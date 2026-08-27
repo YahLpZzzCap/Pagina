@@ -1,57 +1,214 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 30px;
+* {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at 15% 20%, #ff4f81 0%, transparent 35%),
+        radial-gradient(circle at 85% 25%, #ff7b45 0%, transparent 35%),
+        radial-gradient(circle at 50% 100%, #7045ff 0%, transparent 45%),
+        linear-gradient(135deg, #171b52, #6d2d91, #d53d75);
+
+    background-attachment: fixed;
+    padding: 40px 20px;
+}
+
+
+/* TÍTULO */
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,0.5);
+}
+
+
+/* FORMULARIO */
 
 .formulario {
-    width: 400px;
-    max-width: 90%;
+    width: 450px;
+    max-width: 95%;
     margin: auto;
-    padding: 20px;
-    background: #222;
-    border-radius: 10px;
+
+    padding: 30px;
+
+    background: rgba(20, 15, 40, 0.75);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.4);
+
+    backdrop-filter: blur(10px);
 }
 
-input, select, textarea {
-    width: 90%;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+
+.formulario h2 {
+    margin-top: 0;
+    text-align: center;
 }
+
+
+/* CAMPOS */
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    margin: 8px 0;
+    padding: 14px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.12);
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255,255,255,0.65);
+}
+
+
+select option {
+    color: black;
+}
+
 
 textarea {
-    height: 100px;
+    height: 120px;
+    resize: none;
 }
+
+
+/* BOTÓN */
 
 button {
-    padding: 12px 20px;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 14px;
+
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ff4f81,
+        #ff7048
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
     cursor: pointer;
+
+    transition: 0.3s;
 }
+
 
 button:hover {
-    transform: scale(1.05);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(255,80,130,0.4);
 }
+
+
+/* TÍTULO OPINIONES */
+
+body > h2 {
+
+    text-align: center;
+
+    margin-top: 50px;
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+}
+
+
+/* CONTENEDOR DE RESEÑAS */
 
 #listaResenas {
-    width: 600px;
-    max-width: 90%;
-    margin: 20px auto;
+
+    width: 650px;
+    max-width: 95%;
+
+    margin: auto;
 }
+
+
+/* CADA RESEÑA */
 
 .resena {
-    background: #222;
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: left;
+
+    margin: 20px 0;
+
+    padding: 22px;
+
+    background: rgba(20, 15, 40, 0.72);
+
+    border-radius: 15px;
+
+    border-left: 4px solid #ff6384;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+
+    backdrop-filter: blur(8px);
+
+    transition: 0.3s;
 }
 
+
+.resena:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.45);
+}
+
+
 .resena h3 {
-    margin: 0;
+
+    margin-top: 0;
+
+    font-size: 20px;
+}
+
+
+.resena p {
+
+    color: rgba(255,255,255,0.85);
+
+    line-height: 1.5;
 }
