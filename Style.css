@@ -1,0 +1,107 @@
+:root{
+  --pink-primary: #ff7597;
+  --pink-dark: #e65c83;
+  --cyan-main: #38c8d8;
+  --blue-dark: #1b2850
+}
+
+body{
+  background-image: url('gta.png'); 
+  
+  /* Hace que la imagen cubra todo el fondo sin perder su proporción */
+  background-size: cover; 
+  
+  /* Mantiene la imagen centrada tanto en PC como en móvil */
+  background-position: center center; 
+  
+  /* Evita que la imagen se repita en mosaico */
+  background-repeat: no-repeat; 
+  
+  /* Fija el fondo opcionalmente para que cree un efecto visual elegante al hacer scroll */
+  background-attachment: fixed; 
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+}
+
+.tit{
+  font-family: 'Dancing Scrip', cursive;
+  color: var(--cyan-main);
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(56, 200, 216, 0.5);
+  line-height: 1;
+}
+
+.titi{
+  font-family: 'Dancing Scrip', cursive;
+  color: var(--pink-primary);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-top: -5px;
+  text-shadow: 0 0 5px rgba(255, 117, 151, 0.4);
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: Center;
+  padding: 15px 20px;
+  border-bottom: 2px solid var(--cyan-main);
+  background-color: rgba(253, 245, 230, 0.9);
+  width: 100%;
+}
+
+.links{
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.links a{
+  text-decoration: none;
+  color: var(--blue-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}
+.links a.active{
+  border-bottom: 3px solid var(--pink-primary);
+  color: var(--pink-primary);
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.ce{
+  text-align: center;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+.stitulo{
+  font-family: 'Pacifico', cursive;
+  color: var(--pink-primary);
+  font-size: 2.3rem;
+  display: block;
+  margin-bottom: -20px;
+}
+
+.titulo{
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--blue-dark);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
