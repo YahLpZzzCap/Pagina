@@ -54,15 +54,71 @@
     </div>
 </div>
 
-    <section id="Procesadores">
-        <h2>Procesadores</h2>
-        
+    <!-- SECCIÓN DE PROCESADORES -->
+<section id="Procesadores">
+    <h2>Procesadores</h2>
+    
+    <div class="grid-productos">
+        <!-- Producto 1 -->
         <div class="producto-card">
+            <img src="img/ryzen5.png" alt="AMD Ryzen 5 5600G" class="producto-img">
             <h3>AMD Ryzen 5 5600G</h3>
-            <p>L 3,500.00</p>
+            <ul class="specs">
+                <li>6 Núcleos / 12 Hilos</li>
+                <li>Gráficos Radeon Vega 7</li>
+                <li>Velocidad: 3.9 GHz / 4.4 GHz</li>
+            </ul>
+            <p class="precio">L 3,500.00</p>
             <button onclick="agregarAlCarrito('AMD Ryzen 5 5600G', 3500)">Agregar al Carrito</button>
         </div>
-    </section>
+
+        <!-- Producto 2 -->
+        <div class="producto-card">
+            <img src="img/ryzen7.png" alt="AMD Ryzen 7 5700X" class="producto-img">
+            <h3>AMD Ryzen 7 5700X</h3>
+            <ul class="specs">
+                <li>8 Núcleos / 16 Hilos</li>
+                <li>Sin gráficos integrados</li>
+                <li>Velocidad: 3.4 GHz / 4.6 GHz</li>
+            </ul>
+            <p class="precio">L 4,800.00</p>
+            <button onclick="agregarAlCarrito('AMD Ryzen 7 5700X', 4800)">Agregar al Carrito</button>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN DE MEMORIAS RAM -->
+<section id="Ram">
+    <h2>Memorias RAM</h2>
+    
+    <div class="grid-productos">
+        <!-- Producto 1 -->
+        <div class="producto-card">
+            <img src="img/corsair_ram.png" alt="Corsair Vengeance RGB" class="producto-img">
+            <h3>Corsair Vengeance RGB 16GB</h3>
+            <ul class="specs">
+                <li>Capacidad: 16GB (2x8GB)</li>
+                <li>Tecnología: DDR4 3200MHz</li>
+                <li>Iluminación RGB Personalizable</li>
+            </ul>
+            <p class="precio">L 1,450.00</p>
+            <button onclick="agregarAlCarrito('Corsair Vengeance RGB 16GB', 1450)">Agregar al Carrito</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="producto-card">
+            <img src="img/fury_ram.png" alt="Kingston Fury Beast" class="producto-img">
+            <h3>Kingston Fury Beast 8GB</h3>
+            <ul class="specs">
+                <li>Capacidad: 8GB (1x8GB)</li>
+                <li>Tecnología: DDR4 3200MHz</li>
+                <li>Disipador de calor negro de bajo perfil</li>
+            </ul>
+            <p class="precio">L 750.00</p>
+            <button onclick="agregarAlCarrito('Kingston Fury Beast 8GB', 750)">Agregar al Carrito</button>
+        </div>
+    </div>
+</section>
 
     <script src="logic.js" defer></script>
 </body>
