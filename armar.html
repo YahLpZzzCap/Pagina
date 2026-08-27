@@ -6,8 +6,6 @@
     <meta charset="UTF-8">
     <title>Arma Tu PC</title>
     <link rel="Stylesheet" href="Styles67.css">
-    
-
 </head>
 <body>
     
@@ -29,38 +27,44 @@
         </nav>
     </header>
 
-        <nav>
-    <ul class="Opciones">
-        <li> <a href="#Procesadores">Procesadores</a>
-        <li> <a href="#Ram">Memorias Ram</a></li>
-        <li> <a href="#SSD">Almacenamiento</a></li>    
-        <li> <a href="#Perifericos">Perifericos</a></li>
-        <li> <a href="Monitores">Monitores</a></li>
+    <!-- BARRA DE CATEGORÍAS -->
+    <nav>
+        <ul class="Opciones">
+            <li><a href="#Procesadores">Procesadores</a></li>
+            <li><a href="#Ram">Memorias Ram</a></li>
+            <li><a href="#SSD">Almacenamiento</a></li>
+            <li><a href="#Perifericos">Perifericos</a></li>
+            <li><a href="#Monitores">Monitores</a></li>
+        </ul>
+    </nav>
 
-        <li class="container">
-            <a href="#" id="btnCarrito">Carrito 🛒 <span id="contadorCarrito">0</span></a>
-            
-            <div class="Ventana">
-                <h3>Tu Carrito</h3>
-                <ul id="listaProductos"></ul>
-                <div class="carrito-total">
-                    <strong>Total:</strong> <span id="totalPrecio">$0.00</span>
-                </div>
-                <button class="btn-pagar">Ir a Pagar</button>
+    <!-- BOTÓN DEL CARRITO APARTADO Y LIMPIO -->
+    <!-- CARRITO FLOTANTE A LA DERECHA -->
+<div class="contenedor-carrito-flotante">
+    <div class="container" style="position: relative;">
+        <a href="#" id="btnCarrito" class="btn-carrito-separado">Carrito 🛒 <span id="contadorCarrito">0</span></a>
+        
+        <div class="Ventana">
+            <h3>Tu Carrito</h3>
+            <ul id="listaProductos"></ul>
+            <div class="carrito-total">
+                <strong>Total:</strong> <span id="totalPrecio">L 0.00</span>
             </div>
-        </li>
-    </ul>
-</nav>
-        <section id="Procesadores">
-    <h2>Procesadores</h2>
-    
-    <div class="producto-card">
-        <h3>AMD Ryzen 5 5600G</h3>
-        <p>L 3,500.00</p>
-        <!-- Botón que llama a la función de JS enviando el nombre y el precio -->
-        <button onclick="agregarAlCarrito('AMD Ryzen 5 5600G', 3500)">Agregar al Carrito</button>
+            <button class="btn-pagar">Ir a Pagar</button>
+        </div>
     </div>
-</section>
-<script src="logic.js" defer></script>
+</div>
+
+    <section id="Procesadores">
+        <h2>Procesadores</h2>
+        
+        <div class="producto-card">
+            <h3>AMD Ryzen 5 5600G</h3>
+            <p>L 3,500.00</p>
+            <button onclick="agregarAlCarrito('AMD Ryzen 5 5600G', 3500)">Agregar al Carrito</button>
+        </div>
+    </section>
+
+    <script src="logic.js" defer></script>
 </body>
 </html>

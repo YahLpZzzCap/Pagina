@@ -203,7 +203,7 @@ p {
 
 @media (max-width: 768px) {
     .Opciones {
-        flex-direction: column; /* Pone los botones uno debajo de otro */
+        flex-direction: column;
         align-items: center;
         gap: 10px;
         padding: 10px;
@@ -244,5 +244,41 @@ p {
     box-shadow:
         0 0 10px #ff4fa3,
         0 0 30px rgba(255, 79, 163, 0.6);
+}
+
+/* Posición fija en la esquina superior derecha que te sigue al bajar */
+.contenedor-carrito-flotante {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Estilo del botón del carrito flotante */
+.btn-carrito-separado {
+    background: rgba(20, 0, 40, 0.85);
+    color: white;
+    border: 2px solid #ff4fa3;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(255, 79, 163, 0.5);
+    transition: 0.3s;
+}
+
+.btn-carrito-separado:hover {
+    background: #ff4fa3;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px #ff4fa3;
+}
+
+/* Ajuste para que la ventana del carrito se despliegue hacia la izquierda del botón */
+.contenedor-carrito-flotante .Ventana {
+    right: 0;
+    left: auto;
+    top: 45px;
 }
 
