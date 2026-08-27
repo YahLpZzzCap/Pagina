@@ -1,4 +1,4 @@
-localStorage.removeItem("resenas");
+
 let resenas = JSON.parse(localStorage.getItem("resenas")) || [
     {
         nombre: "Carlos",
