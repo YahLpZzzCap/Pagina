@@ -103,32 +103,32 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(estilosFooter);
 
-    // 5. Crear y añadir el Footer al final de la página con las mayúsculas correctas
+    // 5. Crear y añadir el Footer al final de la página completamente libre de emojis
     const footer = document.createElement("footer");
     footer.className = "footer-tienda";
     footer.innerHTML = `
         <div class="footer-contenido">
             <div class="footer-columna">
-                <h4>Los Cheles .py 🚀</h4>
+                <h4>Los Cheles .py</h4>
                 <p>Tu tienda de confianza para armar el setup de tus sueños con los mejores componentes de hardware.</p>
             </div>
             <div class="footer-columna">
                 <h4>Enlaces Rápidos</h4>
-                <a href="index.html">🏠 Inicio</a>
-                <a href="Historia.html">📖 Historia</a>
-                <a href="Contactos.html">📞 Contactos</a>
-                <a href="Creditos.html">⭐ Créditos</a>
-                <a href="Reseñas.html">💬 Reseñas</a>
+                <a href="index.html">Inicio</a>
+                <a href="Historia.html">Historia</a>
+                <a href="Contactos.html">Contactos</a>
+                <a href="Creditos.html">Créditos</a>
+                <a href="Reseñas.html">Reseñas</a>
             </div>
             <div class="footer-columna">
                 <h4>¡Conéctate!</h4>
-                <p>📍 Disponible para todo el colegio</p>
-                <p>💻 Soporte técnico y preventas</p>
-                <p>⚡ Todo al tiro y 100% funcional</p>
+                <p>Disponible para todo el colegio</p>
+                <p>Soporte técnico y preventas</p>
+                <p>Todo al tiro y 100% funcional</p>
             </div>
         </div>
         <div class="footer-copy">
-            <p>&copy; 2026 Los Cheles .py — Todos los derechos reservados. Diseñado con pasión y código limpio.</p>
+            <p>&copy; 2026 Los Cheles .py — Todos los derechos reservados. La mejor pagina de 12vo</p>
         </div>
     `;
     document.body.appendChild(footer);
