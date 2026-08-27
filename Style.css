@@ -6,20 +6,33 @@
 }
 
 body{
+  /* Reemplaza 'tu-fondo.jpg' con el nombre de tu imagen de fondo */
   background-image: url('gta1.png'); 
   
-  /* Hace que la imagen cubra todo el fondo sin perder su proporción */
-  background-size: cover; 
-  
-  /* Mantiene la imagen centrada tanto en PC como en móvil */
-  background-position: center center; 
-  
-  /* Evita que la imagen se repita en mosaico */
-  background-repeat: no-repeat; 
-  
-  /* Fija el fondo opcionalmente para que cree un efecto visual elegante al hacer scroll */
-  background-attachment: fixed; 
+  /* Configuración por defecto para Computadora (Escritorio) */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+/* Ajuste específico para Teléfonos (Pantallas menores o iguales a 768px) */
+@media (max-width: 768px) {
+  body {
+    /* 'contain' o '100% auto' asegura que la imagen se acomode al ancho del celular sin cortarse de los lados */
+    background-size: 100% auto; 
+    
+    /* Ubica el fondo desde la parte superior para que no se pierdan los elementos clave */
+    background-position: top center; 
+    
+    /* Desactivamos el 'fixed' en móviles para evitar tirones al hacer scroll */
+    background-attachment: scroll; 
+    
+    /* Si tu imagen original es muy horizontal y queda mucho espacio vacío abajo, 
+       puedes cambiar el color de fondo del body para que combine con la parte inferior de la imagen (el azul oscuro de la cuadrícula): */
+    background-color: #1b2850; 
+  }
 }
+
 
 .logo{
   display: flex;
