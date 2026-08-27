@@ -6,7 +6,7 @@
 }
 
 body{
-  background-image: url('gta.png'); 
+  background-image: url('gta1.png'); 
   
   /* Hace que la imagen cubra todo el fondo sin perder su proporción */
   background-size: cover; 
