@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(#d4e2ff, #fdecff);
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #e1f0ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 2px solid #56d0d0;
+        }
+
+        .cheles {
+            color: #e286ee;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .py {
+            color: #f78da7;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2d3e50;
+            font-weight: bold;
+            margin-left: 20px;
+            font-size: 14px;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 3px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #f78da7;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f7afc1;
+            transform: translateY(-2px);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.activo {
+            color: #f78da7;
+            border-bottom: 2px solid #f78da7;
+        }
+
+        h1.titulo-seccion {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            margin: 40px 20px 20px 20px;
+            font-size: 1.8rem;
+            color: #000000;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+
+        .contactos-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .tarjeta-contacto {
+            flex: 1 1 0px;
+            min-width: 180px;
+            background: linear-gradient(#5e97ff, #ff76f8);
+            border: 1px solid #000000;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            box-sizing: border-box;
+        }
+
+        .tarjeta-contacto:hover {
+            transform: translateY(-8px);
+            border-color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                        0 0 25px rgba(255, 118, 248, 0.6), 
+                        0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .tarjeta-header {
+            margin-bottom: 16px;
+        }
+
+        .ubicacion-tag {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #000000;
+            margin-bottom: 4px;
+        }
+
+        .tarjeta-header h2 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .tarjeta-body {
+            border-top: 1px solid #000000;
+            padding-top: 12px;
+        }
+
+        .label {
+            display: block;
+            font-size: 0.75rem;
+            color: #000000;
+            margin-bottom: 4px;
+        }
+
+        .telefono {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0f172a;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            padding: 4px 0;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .telefono svg {
+            width: 16px;
+            height: 16px;
+            stroke: #0f172a;
+            transition: stroke 0.3s ease, filter 0.3s ease;
+        }
+
+        .telefono:hover {
+            color: #0056b3;
+            text-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+        }
+
+        .telefono:hover svg {
+            stroke: #0056b3;
+            filter: drop-shadow(0 0 4px rgba(0, 123, 255, 0.6));
+        }
+
+        .footer-derechos {
+            width: 100%;
+            background: linear-gradient(#ff8dcc, #817fff);
+            border-top: 1px solid #000000;
+            padding: 20px 0;
+            margin-top: auto;
+            font-family: system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .footer-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-contenido p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #000000;
+            line-height: 1.5;
+        }
+
+        .footer-contenido strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .contactos-container {
+                flex-wrap: wrap;
+            }
+            .tarjeta-contacto {
+                flex: 1 1 calc(50% - 16px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <span class="cheles">Los Cheles</span><br>
+            <span class="py">.PY</span>
+        </div>
+        <nav>
+            <a href="index.html">INICIO</a>
+            <a href="historia.html">HISTORIA</a>
+            <a href="armar.html">ARMAR PC</a>
+            <a href="contacto.html" class="activo">CONTACTO</a>
+            <a href="creditos.html">CREDITOS</a>
+            <a href="Reseñas.html">RESEÑAS</a>
+        </nav>
+    </header>
+
+    <h1 class="titulo-seccion">CONTACTANOS EN NUESTRAS DIFERENTES TIENDAS</h1>
+
+    <section class="contactos-container">
+
+      <article class="tarjeta-contacto">
+        <div class="tarjeta-header">
+          <span class="ubicacion-tag">Colon</span>
+          <h2>Tocoa</h2>
+        </div>
+        <div class="tarjeta-body">
+          <div class="info-grupo">
+            <span class="label">Contacto</span>
+            <a href="tel:22624926" class="telefono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              2262-4926
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-contacto">
+        <div class="tarjeta-header">
+          <span class="ubicacion-tag">Gracias a Dios</span>
+          <h2>La Mosquitia</h2>
+        </div>
+        <div class="tarjeta-body">
+          <div class="info-grupo">
+            <span class="label">Contacto</span>
+            <a href="tel:22624926" class="telefono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              2262-4926
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-contacto">
+        <div class="tarjeta-header">
+          <span class="ubicacion-tag">Tegucigalpa</span>
+          <h2>Represa los Laureles</h2>
+        </div>
+        <div class="tarjeta-body">
+          <div class="info-grupo">
+            <span class="label">Contacto</span>
+            <a href="tel:24438520" class="telefono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              2443-8520
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-contacto">
+        <div class="tarjeta-header">
+          <span class="ubicacion-tag">Lempira</span>
+          <h2>Celaque</h2>
+        </div>
+        <div class="tarjeta-body">
+          <div class="info-grupo">
+            <span class="label">Contacto</span>
+            <a href="tel:94425551" class="telefono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              9442-5551
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="footer-derechos">
+      <div class="footer-contenido">
+        <p>&copy; 2026 <strong>cheles.py</strong>. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+</body>
+</html>
