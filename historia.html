@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOS CHELES .PY</title>
+    <link rel="stylesheet" href="ey.css">
+</head>
+<body>
+    
+    <!-- NAV 1: Navegación Principal del Sitio -->
+    <nav class="navbar-principal">
+        <div class="nav-brand">LOS CHELES .PY</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="armar.html">Armar PC</a></li>
+            <li><a href="contactos.html">Contacto</a></li>
+            <li><a href="creditos.html">Créditos</a></li>
+            <li><a href="Reseñas.html">Reseñas</a></li>
+        </ul>
+    </nav>
+
+<!-- NAV 2: Menú CMD -->
+<div class="cmd-menu">
+    <div class="cmd-header">
+        <span class="cmd-titulo">Administrador: Símbolo del sistema</span>
+        <div class="cmd-botones">
+            <span>_</span>
+            <span>&#9633;</span>
+            <span class="cmd-cerrar" onclick="cerrarCMD()">X</span>
+        </div>
+    </div>
+
+    <div class="cmd-body">
+        <div class="cmd-linea-prompter">
+            <span class="cmd-prompt">C:\Windows\System32>Computer_timeline.exe</span>
+            <span id="cmd-typer"></span>
+        </div>
+
+        <div class="cmd-input-container">
+            <span class="cmd-prompt">C:\></span>
+            <input type="text" id="cmd-input" class="cmd-input" autocomplete="off" spellcheck="false" placeholder="Escribe aquí..." autofocus>
+        </div>
+
+        <!-- Salida de los comandos abajo -->
+        <div id="cmd-output" class="cmd-output"></div>
+
+        <div id="cmd-links" class="cmd-links-container" style="display: none;">
+            <a href="#epoca-80s" class="cmd-link">[ 1. 1980-1989 ]</a>
+            <a href="#epoca-90s" class="cmd-link">[ 2. 1990-1999 ]</a>
+            <a href="#epoca-2000s" class="cmd-link">[ 3. 2000-2019 ]</a>
+            <a href="#epoca-2020" class="cmd-link">[ 4. 2020-2022 ]</a>
+            <a href="#epoca-2023" class="cmd-link">[ 5. 2023-ACTUALIDAD ]</a>
+        </div>
+    </div>
+</div>
+
+    <script src="ani.js" defer></script>
+</body>
+</html>
