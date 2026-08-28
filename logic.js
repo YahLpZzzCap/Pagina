@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h4>¡Conéctate!</h4>
                 <p>Disponible para todo el colegio</p>
                 <p>Soporte técnico y preventas</p>
-                <p>Todo al tiro y 100% funcional</p>
+                <p>Todo al Cheque y 100% funcional</p>
             </div>
         </div>
         <div class="footer-copy">
@@ -369,7 +369,7 @@ function confirmarCompraColegio() {
         <strong>Entrega:</strong> ${direccion}<br>
         <strong>Artículos:</strong> ${totalItems} producto(s)<br>
         <strong>Total pagado:</strong> L ${totalGeneral.toFixed(2)}<br><br>
-        <span style="color: #00ffff;">¡Gracias por tu compra, todo al tiro! 🚀 Te enviaremos el comprobante pronto.</span>
+        <span style="color: #00ffff;">¡Gracias por tu compra! Te enviaremos el comprobante pronto.</span>
     `;
 
     let textoDetalle = document.getElementById("textoDetalleExito");
