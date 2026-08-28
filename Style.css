@@ -164,6 +164,15 @@ body{
     width: 90%;
 }
 
+  .tarjeta img, 
+.icono img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+  
 .tarjeta {
     width: 400px;
     height: 370px;
@@ -227,15 +236,6 @@ body{
         gap: 8px;
         width: 96%;
     }
-
-    .tarjeta img, 
-.icono img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
 
 .tarjeta img, 
   .icono img {
