@@ -228,18 +228,21 @@ body{
         width: 96%;
     }
 
-    .tarjeta {
-        width: 50%;
-        height: 260px;
-        padding: 15px 8px;
-    }
+    .tarjeta img, 
+.icono img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
 
-    .icono img {
-      font-size: 38px;
-        width: 70px;
-        height: 70px;
-        object-fit: contain;
-    }
+.tarjeta img, 
+  .icono img {
+    width: 40px;
+    height: 40px;
+  }
+    
     .tarjeta h2 {
         font-size: 17px;
     }
