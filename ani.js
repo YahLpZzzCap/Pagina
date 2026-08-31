@@ -1,16 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // === CONFIGURACIÓN Y ELEMENTOS ===
     const textoAnimado = " Carga completada. Escribe 'help' o selecciona una época:";
     const elementoTyper = document.getElementById("cmd-typer");
     const contenedorLinks = document.getElementById("cmd-links");
     const inputCmd = document.getElementById("cmd-input");
     const outputCmd = document.getElementById("cmd-output");
-    let i = 0;
+    
+    // Controles de ventana CMD
+    const cmdWindow = document.getElementById("cmd-window");
+    const btnCerrarCmd = document.getElementById("btn-cerrar-cmd");
+    const btnReabrirCmd = document.getElementById("btn-reabrir-cmd");
 
-    // Precarga y manejo de audio
-    let audioScreamer = document.getElementById("screamer-audio");
+    // Audio Screamer
+    const audioScreamer = document.getElementById("screamer-audio");
     let audioPermitido = false;
 
-    // Desbloquea el permiso de audio al primer clic en la página
+    let i = 0;
+
+    // === DESBLOQUEO DE AUDIO (POLÍTICA DE AUTOPLAY) ===
     document.addEventListener("click", () => {
         if (!audioPermitido && audioScreamer) {
             audioScreamer.play().then(() => {
@@ -21,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, { once: true });
 
-    // Efecto de máquina de escribir al cargar
+    // === EFECTO MÁQUINA DE ESCRIBIR ===
     function escribirTexto() {
         if (elementoTyper && i < textoAnimado.length) {
             elementoTyper.textContent += textoAnimado.charAt(i);
@@ -36,29 +43,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     escribirTexto();
 
-    // Listener para capturar el Enter en el input
+    // === CONTROL DE APERTURA Y CIERRE DEL CMD ===
+    if (btnCerrarCmd && cmdWindow) {
+        btnCerrarCmd.addEventListener("click", () => {
+            cmdWindow.style.opacity = "0";
+            cmdWindow.style.transform = "scale(0.95)";
+            setTimeout(() => {
+                cmdWindow.style.display = "none";
+                if (btnReabrirCmd) btnReabrirCmd.style.display = "block";
+            }, 300);
+        });
+    }
+
+    if (btnReabrirCmd && cmdWindow) {
+        btnReabrirCmd.addEventListener("click", () => {
+            cmdWindow.style.display = "block";
+            btnReabrirCmd.style.display = "none";
+            setTimeout(() => {
+                cmdWindow.style.opacity = "1";
+                cmdWindow.style.transform = "scale(1)";
+                if (inputCmd) inputCmd.focus();
+            }, 10);
+        });
+    }
+
+    // === CAPTURA DE TECLA ENTER EN EL INPUT ===
     if (inputCmd) {
-        inputCmd.addEventListener("keyup", function(e) {
+        inputCmd.addEventListener("keyup", (e) => {
             if (e.key === "Enter" || e.keyCode === 13) {
                 e.preventDefault();
-                const comando = this.value.trim().toLowerCase();
-                this.value = "";
+                const comando = inputCmd.value.trim().toLowerCase();
+                inputCmd.value = "";
                 ejecutarComando(comando);
             }
         });
     }
 
+    // === PROCESADOR DE COMANDOS ===
     function ejecutarComando(cmd) {
         if (!outputCmd) return;
         outputCmd.style.display = "block";
 
-        switch(cmd) {
+        switch (cmd) {
             case 'help':
                 outputCmd.textContent = 
                     "=== COMANDOS DISPONIBLES ===\n" +
                     " • help            : Muestra la lista de comandos\n" +
                     " • cls             : Limpia la pantalla de la consola\n" +
-                    " • theme vicecity  : Activa la paleta neón 80s\n" +
+                    " • theme vicecity  : Activa la paleta neón Vice City\n" +
                     " • theme brba      : Activa la paleta Breaking Bad\n" +
                     " • theme reset     : Restaura la paleta original\n" +
                     " • overclock       : Activa el modo máximo rendimiento\n" +
@@ -72,24 +104,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             case 'theme vicecity':
             case 'theme vice':
-                document.body.className = "theme-matrix";
-                outputCmd.textContent = "[SYSTEM]: Bienvenido a Ocean Drive. Paleta Vice City activada. 🌴💖";
+                document.body.className = "theme-vice";
+                outputCmd.textContent = "[SYSTEM]: Bienvenido a Vice City. Paleta activada";
                 break;
 
             case 'theme brba':
             case 'theme breakingbad':
-                document.body.className = "theme-cyberpunk";
-                outputCmd.textContent = "[SYSTEM]: Say my name. Paleta Breaking Bad activada. 🧪⚡";
+                document.body.className = "theme-brba";
+                outputCmd.textContent = "[SYSTEM]: Say my name";
                 break;
 
             case 'theme reset':
                 document.body.className = "";
-                outputCmd.textContent = "[SYSTEM]: Tema original restaurado.";
+                outputCmd.textContent = "[SYSTEM]: Volviendo a la paleta original de Los Cheles.";
                 break;
 
             case 'overclock':
             case 'boost':
-                outputCmd.textContent = "[SYSTEM]: Overclock aplicado al procesador. +250% de rendimiento. 🚀⚡";
+                outputCmd.textContent = "[SYSTEM]: Overclock aplicado al procesador. +67% de rendimiento.";
                 break;
 
             // EASTER EGG SCREAMER 67
@@ -131,30 +163,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Función del Screamer
+    // === LÓGICA DEL SCREAMER ===
     function activarScreamer() {
         const screamerContainer = document.getElementById("screamer-container");
 
-        if (screamerContainer) {
+        if (screamerContainer && audioScreamer) {
             screamerContainer.style.display = "flex";
+            audioScreamer.currentTime = 0;
+            audioScreamer.volume = 1.0;
 
-            // Usamos una nueva instancia en JS para forzar la reproducción
-            let reproductor = new Audio("To/te.mp3");
-            reproductor.volume = 1.0;
-            reproductor.play().catch(e => console.error("Error cargando el archivo:", e));
+            audioScreamer.play().catch(e => console.error("Error al reproducir audio:", e));
 
             setTimeout(() => {
                 screamerContainer.style.display = "none";
-                reproductor.pause();
-                reproductor.currentTime = 0;
+                audioScreamer.pause();
+                audioScreamer.currentTime = 0;
             }, 2500);
         }
     }
 });
-
-function cerrarCMD() {
-    const cmd = document.querySelector('.cmd-menu');
-    if (cmd) {
-        cmd.style.display = 'none';
-    }
-}
