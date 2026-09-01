@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     " • theme reset     : Restaura la paleta original\n" +
                     " • credits         : Muestra los integrantes del equipo\n" +
                     " • overclock       : Activa el modo máximo rendimiento\n" +
+                    " • promo2026       : Achievement de Graduación\n" +
                     " • 1, 2, 3, 4, 5   : Salta a la época correspondiente";
                 break;
 
@@ -213,45 +214,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // === SINTETIZADOR DE AUDIO MINECRAFT (WEB AUDIO API) ===
-    function playMinecraftLevelUpSound() {
-        try {
-            const AudioContext = window.AudioContext || window.webkitAudioContext;
-            const ctx = new AudioContext();
-            const notes = [523.25, 659.25, 783.99, 1046.50]; // Notas C5, E5, G5, C6
-            
-            notes.forEach((freq, index) => {
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-
-                osc.type = 'triangle';
-                osc.frequency.value = freq;
-
-                const startTime = ctx.currentTime + (index * 0.08);
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-
-                gain.gain.setValueAtTime(0.2, startTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.3);
-
-                osc.start(startTime);
-                osc.stop(startTime + 0.3);
-            });
-        } catch (e) {
-            console.log("Audio Web API no disponible.");
-        }
-    }
-
-    // === DISPARADOR DE NOTIFICACIÓN PROMO 2026 ===
+    // === DISPARADOR DE NOTIFICACIÓN PROMO 2026 CON MP3 ===
     function triggerPromo2026Achievement() {
         const toast = document.getElementById('achievement-toast');
-        playMinecraftLevelUpSound();
+        const audioAchievement = document.getElementById('achievement-audio');
 
+        // Reproducir el archivo MP3
+        if (audioAchievement) {
+            audioAchievement.currentTime = 0;
+            audioAchievement.volume = 0.8;
+            audioAchievement.play().catch((e) => console.log("Audio bloqueado por el navegador:", e));
+        }
+
+        // Mostrar el toast durante 8 segundos
         if (toast) {
             toast.classList.add('show');
             setTimeout(() => {
                 toast.classList.remove('show');
-            }, 8000);
+            }, 6000);
         }
     }
 });
