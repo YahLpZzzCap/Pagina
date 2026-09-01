@@ -234,4 +234,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 6000);
         }
     }
+
+    // === SPLASH TEXTS ALEATORIOS ESTILO MINECRAFT ===
+    const splashMessages = [
+        "¿La gente lee esto?",
+        "12 1, El Mejor",
+        "Los Cheles!",
+        "Skibidi",
+        "¡The World Is Yours!",
+        "Made in Honduras!",
+        "No Se Que Poner",
+        "¡Alt + F4",
+        "SixSeven",
+        "Mr Python",
+        "Hello World!",
+        "Libre de Chat GPT... Creo",
+        "Profe Paseme"
+    ];
+
+    const splashElement = document.getElementById("mc-splash");
+    if (splashElement) {
+        const randomIndex = Math.floor(Math.random() * splashMessages.length);
+        splashElement.textContent = splashMessages[randomIndex];
+    }
 });
