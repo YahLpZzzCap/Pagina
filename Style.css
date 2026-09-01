@@ -1,143 +1,271 @@
-:root{
-  --pink-primary: #ff7597;
-  --pink-dark: #e65c83;
-  --cyan-main: #38c8d8;
-  --blue-dark: #1b2850
-}
+:root {
 
-body{
-  /* Reemplaza 'tu-fondo.jpg' con el nombre de tu imagen de fondo */
-  background-image: url('gta1.png'); 
-  
-  /* Configuración por defecto para Computadora (Escritorio) */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    --pink-primary: #ff7597;
+    --pink-dark: #e65c83;
 
-/* Ajuste específico para Teléfonos (Pantallas menores o iguales a 768px) */
-@media (max-width: 768px) {
-  body {
-    /* 'contain' o '100% auto' asegura que la imagen se acomode al ancho del celular sin cortarse de los lados */
-    background-size: 100% auto; 
-    
-    /* Ubica el fondo desde la parte superior para que no se pierdan los elementos clave */
-    background-position: top center; 
-    
-    /* Desactivamos el 'fixed' en móviles para evitar tirones al hacer scroll */
-    background-attachment: scroll; 
-    
-    /* Si tu imagen original es muy horizontal y queda mucho espacio vacío abajo, 
-       puedes cambiar el color de fondo del body para que combine con la parte inferior de la imagen (el azul oscuro de la cuadrícula): */
-    background-color: #1b2850; 
-  }
+    --cyan-main: #38c8d8;
+
+    --blue-dark: #1b2850;
+
 }
 
 
-.logo{
-  display: flex;
-  flex-direction: column;
+/* ==============================
+   CONFIGURACIÓN GENERAL
+   ============================== */
+
+* {
+    box-sizing: border-box;
 }
 
-.tit{
-  font-family: 'Dancing Scrip', cursive;
-  color: var(--cyan-main);
-  font-weight: 700;
-  font-size: 3rem;
-  letter-spacing: 1px;
-  text-shadow: 0 0 5px rgba(56, 200, 216, 0.5);
-  line-height: 1;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
 }
 
-.titi{
-  font-family: 'Dancing Scrip', cursive;
-  color: var(--pink-primary);
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-top: -5px;
-  text-shadow: 0 0 5px rgba(255, 117, 151, 0.4);
+
+body {
+
+    background-image: url('gta1.png');
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    background-color: #fffaf0;
+
 }
 
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: Center;
-  padding: 15px 20px;
-  border-bottom: 2px solid var(--cyan-main);
-  background-color: rgba(253, 245, 230, 0.9019607843137255);
-  width: 100%;
+
+/* ==============================
+   NAVBAR
+   ============================== */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 20px;
+
+    border-bottom: 2px solid var(--cyan-main);
+
+    background-color: rgba(253, 245, 230, 0.9);
+
+    width: 100%;
+
 }
 
-.links{
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    flex-direction: column;
+
 }
-.links a{
-  text-decoration: none;
-  color: var(--blue-dark);
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  padding-bottom: 10px;
+
+
+.tit {
+
+    font-family: 'Dancing Script', cursive;
+
+    color: var(--cyan-main);
+
+    font-weight: 700;
+
+    font-size: 3rem;
+
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 5px rgba(56, 200, 216, 0.5);
+
+    line-height: 1;
+
 }
-.links a.active{
-  border-bottom: 3px solid var(--pink-primary);
-  color: var(--pink-primary);
+
+
+.titi {
+
+    font-family: 'Dancing Script', cursive;
+
+    color: var(--pink-primary);
+
+    font-weight: 700;
+
+    font-size: 2.5rem;
+
+    margin-top: -5px;
+
+    text-shadow: 0 0 5px rgba(255, 117, 151, 0.4);
+
 }
+
+
+/* MENÚ */
+
+.links {
+
+    display: flex;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+}
+
+
+.links a {
+
+    text-decoration: none;
+
+    color: var(--blue-dark);
+
+    font-weight: 700;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 1px;
+
+    padding-bottom: 10px;
+
+}
+
+
+.links a.active {
+
+    border-bottom: 3px solid var(--pink-primary);
+
+    color: var(--pink-primary);
+
+}
+
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+   ============================== */
 
 .hero {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
 }
 
-.ce{
-  text-align: center;
-  z-index: 1;
-  margin-bottom: 30px;
+
+/* TÍTULOS */
+
+.ce {
+
+    text-align: center;
+
+    z-index: 1;
+
+    margin-bottom: 30px;
+
 }
 
-.stitulo{
-  font-family: 'Pacifico', cursive;
-  color: var(--pink-primary);
-  font-size: 2.3rem;
-  display: block;
-  margin-bottom: -20px;
+
+.stitulo {
+
+    font-family: 'Pacifico', cursive;
+
+    color: var(--pink-primary);
+
+    font-size: 2.3rem;
+
+    display: block;
+
+    margin-bottom: -20px;
+
 }
 
-.titulo{
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  color: var(--blue-dark);
-  letter-spacing: 2px;
-  text-transform: uppercase;
+
+.titulo {
+
+    font-family: 'Outfit', sans-serif;
+
+    font-weight: 700;
+
+    font-size: 2.5rem;
+
+    color: var(--blue-dark);
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
 }
 
-  #modalTerminos {
+
+.tagline {
+
+    color: var(--blue-dark);
+
+}
+
+
+.sub-tagline {
+
+    color: var(--pink-primary);
+
+}
+
+
+/* ==============================
+   MODAL DE TÉRMINOS
+   ============================== */
+
+#modalTerminos {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 100%;
 
     background: rgba(0, 0, 0, 0.85);
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     z-index: 9999;
+
 }
 
+
 .ventanaTerminos {
+
     width: 800px;
+
     height: 90vh;
 
     background: white;
@@ -147,147 +275,475 @@ body{
     overflow: hidden;
 
     box-shadow: 0 10px 50px black;
+
 }
 
+
 .ventanaTerminos iframe {
+
     width: 100%;
+
     height: 100%;
 
     border: none;
+
 }
+
+
+/* ==============================
+   CONTENEDOR DE TARJETAS
+   ============================== */
 
 .tarjetas {
-    background-color: rgb(242, 242, 199,30%);
-    display: flex;
-    justify-content: center;
-    gap: 55px;
-    margin: 35px auto;
-    width: 90%;
-}
-  
 
-  .tarjeta img, 
-.icono img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 30px;
+
+    width: 90%;
+
+    margin: 35px auto;
+
 }
-  
+
+
+/* ==============================
+   TARJETAS
+   ============================== */
+
 .tarjeta {
+
     width: 400px;
+
     height: 370px;
-    
-    
+
     border: 2px solid #ef6b9d;
+
     border-radius: 15px;
 
     text-align: center;
+
     text-decoration: none;
 
     padding: 35px 25px;
 
     color: #14254d;
 
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 250, 240, 0.75);
 
     transition: 0.3s;
+
 }
 
 
+/* ICONOS */
+
+.tarjeta img,
+.icono img {
+
+    width: 70px;
+
+    height: 70px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto;
+
+}
+
+
+/* TÍTULO DE TARJETA */
+
 .tarjeta h2 {
+
     margin: 5px 0 10px;
 
     font-size: 32px;
+
     color: #e75f92;
+
     font-weight: bold;
+
 }
+
+
+/* LÍNEA */
 
 .tarjeta hr {
+
     width: 80%;
+
     border: none;
+
     border-top: 2px solid #48b8ca;
+
 }
+
+
+/* TEXTO */
 
 .tarjeta p {
+
     font-size: 18px;
+
     line-height: 1.5;
+
     margin: 20px 0;
+
 }
 
+
+/* BOTÓN */
+
 .tarjeta span {
+
     display: inline-block;
 
     padding: 10px 55px;
 
     border: 2px solid #48b8ca;
+
     border-radius: 8px;
-    
+
     color: #48b8ca;
+
     font-size: 20px;
+
     font-weight: bold;
+
 }
+
+
+/* EFECTO AL PASAR EL CURSOR */
 
 .tarjeta:hover {
+
     transform: translateY(-5px);
+
 }
 
-  @media (max-width: 600px) {
 
-    .tarjetas {
-        gap: 8px;
-        width: 96%;
-    }
+/* ==============================
+   FOOTER
+   ============================== */
 
-.tarjeta img, 
-  .icono img {
-    width: 40px;
-    height: 40px;
-  }
-    
-    .tarjeta h2 {
-        font-size: 17px;
-    }
+.footer {
 
-    .tarjeta p {
-        font-size: 11px;
-    }
-
-    .tarjeta span {
-        padding: 7px 12px;
-        font-size: 11px;
-    }
-  }
-
-  .footer {
     width: 100%;
+
     text-align: center;
+
     margin-top: 30px;
+
     padding-bottom: 25px;
+
     border-top: 2px solid #e875a5;
+
     color: #e875a5;
+
     font-size: 16px;
+
 }
+
+
+/* CONTENEDOR DE LA PALMERA */
 
 .footer-line {
+
     position: relative;
+
     height: 45px;
+
 }
+
+
+/* PALMERA */
 
 .footer-line img {
+
     position: absolute;
+
     width: 45px;
+
     height: auto;
+
     left: 50%;
+
     top: -23px;
+
     transform: translateX(-50%);
-    background-color: #fffaf0;
+
+    background-color: rgba(255, 250, 240, 0.2);
+
     padding: 0 12px;
+
 }
+
+
+/* COPYRIGHT */
 
 .footer p {
+
     margin: 10px 0 0;
+
 }
 
-  
+
+/* ==============================
+   TABLETS
+   ============================== */
+
+@media (max-width: 768px) {
+
+    body {
+
+        background-size: 100% auto;
+
+        background-position: top center;
+
+        background-attachment: scroll;
+
+        background-color: #fffaf0;
+
+    }
+
+
+    .navbar {
+
+        padding: 10px;
+
+    }
+
+
+    .links {
+
+        gap: 12px;
+
+    }
+
+
+    .links a {
+
+        font-size: 0.65rem;
+
+        padding-bottom: 5px;
+
+    }
+
+
+    .tit {
+
+        font-size: 2rem;
+
+    }
+
+
+    .titi {
+
+        font-size: 1.7rem;
+
+    }
+
+
+    .hero {
+
+        padding: 25px 10px;
+
+    }
+
+
+    .titulo {
+
+        font-size: 2rem;
+
+    }
+
+
+    .stitulo {
+
+        font-size: 1.8rem;
+
+    }
+
+}
+
+
+/* ==============================
+   TELÉFONOS
+   ============================== */
+
+@media (max-width: 600px) {
+
+
+    /* TARJETAS HORIZONTALES */
+
+    .tarjetas {
+
+        display: flex;
+
+        flex-direction: row;
+
+        gap: 8px;
+
+        width: 96%;
+
+        margin: 20px auto;
+
+    }
+
+
+    /* CUADROS */
+
+    .tarjeta {
+
+        width: 50%;
+
+        height: 230px;
+
+        padding: 15px 8px;
+
+        box-sizing: border-box;
+
+    }
+
+
+    /* ICONOS */
+
+    .tarjeta img,
+    .icono img {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+
+    /* TÍTULOS */
+
+    .tarjeta h2 {
+
+        font-size: 17px;
+
+        margin: 5px 0;
+
+    }
+
+
+    /* LÍNEA */
+
+    .tarjeta hr {
+
+        width: 80%;
+
+    }
+
+
+    /* TEXTO */
+
+    .tarjeta p {
+
+        font-size: 11px;
+
+        line-height: 1.3;
+
+        margin: 12px 0;
+
+    }
+
+
+    /* BOTONES */
+
+    .tarjeta span {
+
+        padding: 7px 12px;
+
+        font-size: 11px;
+
+    }
+
+
+    /* TÍTULO PRINCIPAL */
+
+    .titulo {
+
+        font-size: 1.7rem;
+
+    }
+
+
+    .stitulo {
+
+        font-size: 1.6rem;
+
+    }
+
+
+    .tagline {
+
+        font-size: 12px;
+
+    }
+
+
+    .sub-tagline {
+
+        font-size: 11px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+
+        font-size: 12px;
+
+        margin-top: 20px;
+
+        padding-bottom: 20px;
+
+    }
+
+
+    .footer-line {
+
+        height: 40px;
+
+    }
+
+
+    .footer-line img {
+
+        width: 40px;
+
+        top: -20px;
+
+    }
+
+}
+
+
+/* ==============================
+   TÉRMINOS EN TELÉFONO
+   ============================== */
+
+@media (max-width: 600px) {
+
+    .ventanaTerminos {
+
+        width: 95%;
+
+        height: 90vh;
+
+    }
+
+}
