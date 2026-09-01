@@ -438,9 +438,11 @@
 
         function aceptarTerminos() {
 
-            window.parent.document
-                .getElementById("modalTerminos")
-                .style.display = "none";
+    sessionStorage.setItem("terminosAceptados", "true");
+
+    window.parent.document
+        .getElementById("modalTerminos")
+        .style.display = "none";
 
         }
 
